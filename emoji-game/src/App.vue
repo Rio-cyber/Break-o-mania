@@ -70,67 +70,19 @@
         </div>
         <div class="col-md-8">
           <div class="row">
-            <div class="col-md-4">Countdown : {{timerStart}}</div>
-            <div class="col-md-4">Total Score: {{totalScore}}</div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-5" v-if="gameOver">
-        <button class="btn btn-primary" @click="startNewGame()">Start New Game</button>
-      </div>
-      <div class="row mt-5" v-else>
-        <div class="col-md-6">
-          <button class="btn btn-success" :disabled="inPlay" @click="playGame()">Play</button>
-          &nbsp;
-          <button
-            class="btn btn-warning"
-            :disabled="!inPlay"
-            @click="skipEmoji()"
           >Skip Emoji</button>
         </div>
       </div>
       <!-- row -->
       <div class="row mt-5">
         <div class="col-md-6">
-          <div>
-            <video autoplay id="video1" ref="video1"></video>
-            <canvas style="display:none;" id="canvas1" ref="canvas1"></canvas>
-          </div>
-          <div>
-            <button class="btn btn-primary" @click="captureImage()">Capture Image</button>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-6">
-              <img
-                id="usercapture"
-                ref="usercapture"
-                src="http://via.placeholder.com/150x150"
-                width="200"
-                height="200"
-              />
               <div class="mt-2">
-                <button
-                  class="btn btn-success"
-                  @click="predictImage()"
-                  :disabled="predictingImage"
-                >{{predictingImage? 'Please Wait...' : 'Predict Image'}}</button>
-              </div>
-            </div>
-            <div class="col-md-6">
+ 
               <p class="currentEmoji">{{currentEmoji.char}}</p>
             </div>
           </div>
         </div>
       </div>
-      <!-- Modal -->
-      <modal
-        v-if="modal.show"
-        @close="modal.show = false"
-        :header="modal.header"
-        :content="modal.content"
-      ></modal>
     </div>
   </div>
 </template>
@@ -156,11 +108,7 @@ export default {
       pointsIncrement: 10,
       pointsDecrement: 5,
       inPlay: false,
-      gameOver: false,
-      modal: {
-        show: false,
-        header: "My header",
-        content: "My Content"
+
       }
     };
   },
@@ -177,22 +125,12 @@ export default {
     gameEmojis() {
       return emojis.filter(emoji => {
         return (
-          emoji.category.includes("Objects") &&
-          emoji.char.charCodeAt(0) != 55358
+          emoji.category.includes("Objects")
         );
       });
     }
   },
   methods: {
-    // Log the user in
-    login() {
-      this.$auth.loginWithRedirect();
-    },
-    // Log the user out
-    logout() {
-      this.$auth.logout({
-        returnTo: window.location.origin
-      });
     },
     gotDevices(deviceInfos) {
       for (var i = 0; i !== deviceInfos.length; ++i) {
@@ -363,15 +301,5 @@ export default {
 };
 </script>
 <style scoped>
-#video1 {
-  width: 500px;
-  height: 400px;
-  background-color: grey;
-}
-.currentEmoji {
-  font-size: 120px;
-}
-.user-details {
-  color: white;
 }
 </style>
