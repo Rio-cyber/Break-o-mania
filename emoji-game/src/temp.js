@@ -1,3 +1,4 @@
+
 import Vue from "vue";
 import createAuth0Client from "@auth0/auth0-spa-js";
 /** Define a default action to perform after authentication */
