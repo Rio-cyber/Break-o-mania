@@ -52,29 +52,7 @@ export const useAuth0 = ({
         } finally {
           this.loading = false;
         }
-      },
-      /** Authenticates the user using the redirect method */
-      loginWithRedirect(o) {
-        return this.auth0Client.loginWithRedirect(o);
-      },
-      /** Returns all the claims present in the ID token */
-      getIdTokenClaims(o) {
-        return this.auth0Client.getIdTokenClaims(o);
-      },
-      /** Returns the access token. If the token is invalid or missing, a new one is retrieved */
-      getTokenSilently(o) {
-        return this.auth0Client.getTokenSilently(o);
-      },
-      /** Gets the access token using a popup window */
-      getTokenWithPopup(o) {
-        return this.auth0Client.getTokenWithPopup(o);
-      },
-      /** Logs the user out and removes their session on the authorization server */
-      logout(o) {
-        return this.auth0Client.logout(o);
-      }
-    },
-    /** Use this lifecycle method to instantiate the SDK client */
+ 
     async created() {
       // Create a new instance of the SDK client using members of the given options object
       this.auth0Client = await createAuth0Client({
@@ -97,19 +75,8 @@ export const useAuth0 = ({
         }
       } catch (e) {
         this.error = e;
-      } finally {
-        // Initialize our internal authentication state
-        this.isAuthenticated = await this.auth0Client.isAuthenticated();
-        this.user = await this.auth0Client.getUser();
-        this.loading = false;
-      }
+ 
     }
   });
   return instance;
-};
-// Create a simple Vue plugin to expose the wrapper object throughout the application
-export const Auth0Plugin = {
-  install(Vue, options) {
-    Vue.prototype.$auth = useAuth0(options);
-  }
 };
