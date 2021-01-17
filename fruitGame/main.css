@@ -1,0 +1,176 @@
+
+*{
+    font-family: 'Stylish', sans-serif;
+}
+body{
+   background-image: url("images/body_background/body_bg.jpg");
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:0px;
+    
+}
+
+.warning{
+    color: red;
+    background-color: cornsilk;
+    width: 100vw;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.FruitNinjaGame{
+    max-width: 1200px;
+}
+main {
+	display: flex;
+    
+    flex-direction: column;
+    border:1px solid #000000;
+    padding-top: 10px;
+    background-image: url("images/body_background/app_bg.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+main section{
+    text-align: center;
+}
+
+.title{
+    color: green;
+
+}
+.firstWord{
+    color: mediumpurple;
+    
+}
+.secondWord{
+    color: red;
+}
+
+
+/* myCanvas styles */
+#myCanvas {
+    border:1px solid #000000;
+    background: url('images/body_background/background.jpg');
+    background-size: 800px 500px;
+    cursor: url(images/my-cursor.png), auto;
+}
+
+.GameView{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+/** For heading: Keep it centered,
+*/
+h1{
+   text-align: center;
+}
+
+/** for Subheading: - centered,
+*/
+h2{
+   text-align: center;
+}
+
+section.scoreAndTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 50px;
+}
+
+/*Time and Score*/
+#Score, 
+#Time{
+    color: azure;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight:  bold;
+}
+
+#timeholder {
+	float:right;
+	width: 90px;
+}
+
+
+table, th, tr{
+   border: 1px solid #000000;
+}
+
+#ScoreTable{
+   border : 5px solid #000000;
+   margin-left: 500px;
+   margin-top: 30px;
+}
+
+
+/*BUTTONS*/
+#newGameButton, #cancelGameButton{
+    margin: 0px 350px;
+    width: 100px;
+    
+}
+.start-btn{
+    background-color: teal;
+    text-shadow: -1px -1px blue, 1px 1px green;
+    color: white;
+}
+.cancel-btn{
+    background-color: orangered;
+    text-shadow: -1px -1px red, 1px 1px orange;
+    color: white;
+}
+.start-btn, .cancel-btn{
+    text-align: center;
+	display: inline-block;
+	margin:5px;
+    font-weight: bold;
+    padding: 10px 10px 10px 10px ;
+    
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+    box-shadow: 0 .2em gray; 
+    cursor: pointer;
+
+}
+.video-game-button:active, .start-btn:active {
+	box-shadow: none;
+	position: relative;
+	top: .2em;
+}
+
+
+.Instructions{
+    background-color: #90EEAF;
+    padding: 20px;
+}
+.Instructions section{
+    text-align: left;
+}
+
+/*Figure*/
+figure{
+    margin-top:0px;
+}
+
+header{
+    width: 100vw;
+    background-color: azure
+}
+/*footer*/
+footer{
+    background-color: darkslategrey;
+    color: beige;
+    width: 100vw;
+    padding: 20px;
+}
+.Credentials{
+    padding-left: 30px;
+}

@@ -1,0 +1,106 @@
+<!--
+* Fruit Ninja App
+* Credentials: 
+*   Shivam Mahendru
+*   Benjamin Atbi 
+ 
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title> Fruit Slicing App</title>
+
+    <!--    StyleSheets -->
+    <link rel="stylesheet" type="text/css" href="main.css" >
+<!--    Google font -font-family: 'Stylish', sans-serif;-->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+    <!--    Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+<!--    jQuery playSound -- This plugin defines $.playSound function.-->
+    <script src='https://cdn.rawgit.com/admsev/jquery-play-sound/master/jquery.playSound.js' type="text/javascript"></script>
+
+   
+    
+</head>
+<!--  -->
+<body itemscope itemtype="https://schema.org/VideoGame">
+    <div class="warning">
+        <p> <strong>Please Use Full-Screen for best experience!</strong></p>
+    </div>
+    <header id="mainHeader" role="banner">
+       <h1 class="title"> 
+           <span class="firstWord">Fruit</span> 
+           <span class="secondWord">Slicing</span>  
+           <span itemprop="applicationCategory" >game</span> 
+        </h1>
+    </header>
+    
+   <article class="FruitNinjaGame" >
+
+      <!-- Game Canvas view -->
+         <main role="main" >
+            <article role="article">
+                <section class="startAndCancelButtons"> 
+                    <!-- Button for new game Start -->
+                    <span class='start-btn' id="newGameButton" > New Game </span>
+                    <!-- Button to Cancel running Game -->
+                    <span class='cancel-btn' id="cancelGameButton" > Cancel </span>
+                </section>
+                
+                <div class="GameView">
+                    <section class="scoreAndTitle">
+                        <!-- Score display -->
+                        <p id="Score"> Score : </p>
+                        <!-- Time display -->
+                        <p id="Time"> Time : </p>
+                    </section>
+
+                    <section>
+                        <figure class="canvas">
+                            <!-- js Canvas -->
+                            <canvas id="myCanvas" width=800 height=500 >
+                              If you are seeing this, you need to upgrade your browser!
+                            </canvas>
+                        </figure>
+                    </section> 
+                </div>
+                <!--JS file-->
+                <script src="Model.js"></script>
+                <script src="Controller.js"></script>
+                <script src="View.js"></script>
+            </article>
+       
+          <!-- Game rules/Instructions -->
+          <article class="Instructions" role="article" >
+             <h2>Rules:</h2>
+             <section>
+                 <p class="description" itemprop="about">
+                   Fruit Slicing is a game of showing your ninja cutting skills.
+                 </p>
+                 <ul class="mainRules">
+                   <li>
+                     To cut a Fruit, click on it and <b>you will score points</b>.
+                   </li>
+                   <li>
+                     If you cut a bomb, <b>you will lose points</b>.
+                   </li>
+                   <li>
+                     Try to cut as many fruits as possible with the limited time.
+                   </li>
+                 </ul>
+                 <p>It's just that simple.</p>
+            </section>
+
+          </article>
+    
+       </main><!-- main -->
+
+   </article><!--FruitSliceGame -->
+
+ 
+
+</body>
+ <script type="text/javascript" src="./main.js"></script>
+</html>
