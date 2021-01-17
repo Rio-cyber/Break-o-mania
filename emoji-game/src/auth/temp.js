@@ -31,12 +31,6 @@ export const useAuth0 = ({
         this.popupOpen = true;
         try {
           await this.auth0Client.loginWithPopup(o);
-        } catch (e) {
-          // eslint-disable-next-line
-          console.error(e);
-        } finally {
-          this.popupOpen = false;
-        }
         this.user = await this.auth0Client.getUser();
         this.isAuthenticated = true;
       },
@@ -47,10 +41,6 @@ export const useAuth0 = ({
           await this.auth0Client.handleRedirectCallback();
           this.user = await this.auth0Client.getUser();
           this.isAuthenticated = true;
-        } catch (e) {
-          this.error = e;
-        } finally {
-          this.loading = false;
         }
  
     async created() {
@@ -68,11 +58,7 @@ export const useAuth0 = ({
           window.location.search.includes("state=")
         ) {
           // handle the redirect and retrieve tokens
-          const { appState } = await this.auth0Client.handleRedirectCallback();
-          // Notify subscribers that the redirect callback has happened, passing the appState
-          // (useful for retrieving any pre-authentication state)
-          onRedirectCallback(appState);
-        }
+  
       } catch (e) {
         this.error = e;
  
